@@ -1,3 +1,4 @@
+//logger message tool
 import * as log from "https://deno.land/std/log/mod.ts";
 import * as _ from "https://deno.land/x/lodash@4.17.15-es/lodash.js";
 
@@ -34,7 +35,9 @@ async function downloadLaunchData() {
       rocket: launch["rocket"]["rocket_name"],
       customers,
     };
-
+    //      .set(key, value) for storing in the Map
+    //       new Map<number, Launch>();
+    //       organizing it numerically (flight number)
     launches.set(flightData.flightNumber, flightData);
 
     log.info(JSON.stringify(flightData));
